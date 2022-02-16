@@ -1,0 +1,22 @@
+회원가입 페이지
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}<br>
+<br>
+<form action="" method="post" style="display:flex;flex-direction:column;gap:32px;">
+<input name="username" type="text" placeholder="username">
+<input name="password" type="password" placeholder="password">
+<input name="firstname" type="text" placeholder="firstname">
+<input name="middlename" type="text" placeholder="middlename">
+<input name="lastname" type="text" placeholder="lastname">
+<input name="birthday" type="datetime-local" placeholder="birthday">
+<input name="phonenumber" type="text" placeholder="phonenumber">
+<input name="gender" type="text" placeholder="gender">
+
+<input type="submit" value="회원가입">
+</form>
