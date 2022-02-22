@@ -30,12 +30,12 @@ def signup_view(request):
 
         user = User.objects.filter(User_name=username)
         if user:
-            messages.warning(request,"회원가입 실패")
+            messages.warning(request,"Sign up failed")
 
         else:
             User.objects.create(First_name=first_name, Middle_name=middle_name, Last_name=last_name, User_name=username,
                             password=password, phone_number=phone_number, Gender=gender, Date_of_birth=date_of_birth)
-            messages.warning(request,"회원가입 성공")
+            messages.warning(request,"Sign up succeed")
             HttpResponseRedirect("/")
     return render(request, 'users/signUp.html', {})
 
@@ -46,10 +46,10 @@ def signin_view(request):
         password = request.POST['password']
         user = User.objects.filter(User_name=username, password=password)
         if user:
-            messages.warning(request, "로그인 성공")
+            messages.warning(request, "sign-in succeed")
 
             # HttpResponseRedirect("/")
         else:
-            messages.warning(request, "로그인 실패")
+            messages.warning(request, "sign-in failed")
     return render(request, 'users/signIn.html',{})
 

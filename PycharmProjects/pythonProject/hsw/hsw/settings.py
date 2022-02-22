@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 ]
 INSTALLED_APPS += [
     'users',
-    'rest_framework',
+
 
 ]
 
